@@ -11,43 +11,31 @@
       >{{ g.name }}</li>
     </ul>
     <button @click="changeFirstGame">修改第一个游戏的名字</button>
-    <hr>
-    <h2>测试：{{ obj.a.b.c }}</h2>
-    <button @click="changeObj">测试</button>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { reactive } from 'vue'
+<script lang="ts" setup >
+import { ref, reactive } from 'vue'
 
 // 数据
-let car = reactive({ brand: '奔驰', price: 100 })
-let games = reactive([
+let car = ref({ brand: '奔驰', price: 100 })
+let games = ref([
   { id: 'aysdytfsatr01', name: '王者荣耀' },
   { id: 'aysdytfsatr02', name: '原神' },
   { id: 'aysdytfsatr03', name: '三国志' }
 ])
-let obj = reactive({
-  a: {
-    b: {
-      c: 666
-    }
-  }
-})
+let obj = reactive({ x: 999 })
 
 console.log(car)
-console.log(games)
+console.log(obj)
 
 // 方法
 function changePrice() {
-  car.price += 10
-  console.log(car.price)
+  car.value.price += 10
+  console.log(car.value.price)
 }
 function changeFirstGame() {
-  games[0].name = '流星蝴蝶剑'
-}
-function changeObj() {
-  obj.a.b.c = 999
+  games.value[0].name = '流星蝴蝶剑'
 }
 
 </script>
