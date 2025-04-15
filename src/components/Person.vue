@@ -9,35 +9,32 @@
   </div>
 </template>
 
-<!-- 存在两个script也是可以的，一个setup，一个配置name -->
-<!-- <script lang="ts">
-export default {
-  name: 'Person'
-}
-</script> -->
-
-<!-- 如果想在setup里面同时命名组件名称，需要下载插件 -->
 <script lang="ts" setup >
-let name = '张三'
-let age = 18
+import { ref } from 'vue'
+//响应式ref
+let name = ref('张三')
+let age = ref(18)
 let tel = '13888888888'
 let address = '北京昌平区宏福苑·宏福科技园'
 
+console.log(1,name)
+console.log(2,age)
+console.log(3, address)
+console.log(4, tel)
+
 // 方法
 function changeName() {
-  name = 'zhang-san'
-  console.log(name)
+  name.value = 'zhang-san' // JS中操作ref对象时候需要.value
+  console.log(name.value)
 }
 function changeAge() {
-  age += 1
-  console.log(age) 
+  age.value += 1
+  console.log(age.value) // JS中操作ref对象时候需要.value
 }
 function showTel() {
   alert(tel)
 }
 </script>
-
-
 
 <style scoped>
 .person {
