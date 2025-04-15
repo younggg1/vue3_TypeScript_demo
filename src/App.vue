@@ -1,18 +1,21 @@
 <template>
-  <h2 ref="title2">你好</h2>
-  <button @click="showLog">测试</button>
-  <Person ref="ren" />
+  <!-- 务必看懂下面这一行代码 -->
+  <!-- <h2 a="1+1" :b="1+1" c="x" :d="x" ref="qwe">测试</h2> -->
+
+  <Person a="哈哈" />
 </template>
 
-<script lang="ts" setup name="App">
+<script lang="ts" setup>
 import Person from './components/Person.vue'
-import { ref } from 'vue'
+import { reactive } from 'vue'
+import { type Persons } from './types'
 
-let title2 = ref()
-let ren = ref()
+let x = 9
 
-function showLog() {
-  // console.log(title2.value)
-  console.log(ren.value)
-}
+let personList = reactive<Persons>([
+  { id: 'asudfysafd01', name: '张三', age: 18 },
+  { id: 'asudfysafd02', name: '李四', age: 20 },
+  { id: 'asudfysaf)d03', name: '王五', age: 22 }
+])
+
 </script>

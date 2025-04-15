@@ -1,24 +1,36 @@
 <template>
   <div class="person">
-    ???
+    <ul>
+      <li
+          v-for="p in list"
+          :key="p.id"
+      >
+        {{ p.name }} -- {{ p.age }}
+      </li>
+    </ul>
   </div>
 </template>
 
-<script lang="ts" setup >
-import { type PersonInter, type Persons } from '@/types'
+<script lang="ts" setup>
+import { withDefaults } from 'vue'
+import { defineProps } from 'vue'
+import { type Persons } from '../types'
 
-// let person:PersonInter = {id:'asyud7asfd01',name:'张三',age:60}
+// 只接收list
+// defineProps(['list'])
 
-let personList1: Array<PersonInter> = [
-  { id: 'asyud7asfd01', name: '张三', age: 60 },
-  { id: 'asyud7asfd02', name: '李四', age: 18 },
-  { id: 'asyud7asfd03', name: '王五', age: 5 }
-]
-let personList: Persons = [
-  { id: 'asyud7asfd01', name: '张三', age: 60 },
-  { id: 'asyud7asfd02', name: '李四', age: 18 },
-  { id: 'asyud7asfd03', name: '王五', age: 5 }
-]
+// 接收list + 限制类型
+// defineProps<{list:Persons}>()
+
+//  接收list + 限制类型 + 限制必要性 + 指定默认值
+withDefaults(defineProps<{ list?: Persons }>(), {
+  list: () => [{ id: 'ausydgyu01', name: '康师傅·王麻子·特仑苏', age: 19 }]
+})
+
+
+// 接收list，同时将props保存起来
+/* let x = defineProps(['list'])
+console.log(x.list) */
 
 </script>
 
