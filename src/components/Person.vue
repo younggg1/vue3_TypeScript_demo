@@ -1,26 +1,25 @@
 <template>
   <div class="person">
-    <h1>中国</h1>
-    <h2 ref="title2">北京</h2>
-    <h3>尚硅谷</h3>
-    <button @click="showLog">点我输出h2这个元素</button>
+    ???
   </div>
 </template>
 
-<script lang="ts" setup name="Person">
-import { ref } from 'vue'
+<script lang="ts" setup >
+import { type PersonInter, type Persons } from '@/types'
 
-// 创建一个title2，用于存储ref标记的内容
-let title2 = ref()
-let a = ref(0)
-let b = ref(1)
-let c = ref(2)
+// let person:PersonInter = {id:'asyud7asfd01',name:'张三',age:60}
 
-function showLog() {
-  console.log(title2.value)
-}
+let personList1: Array<PersonInter> = [
+  { id: 'asyud7asfd01', name: '张三', age: 60 },
+  { id: 'asyud7asfd02', name: '李四', age: 18 },
+  { id: 'asyud7asfd03', name: '王五', age: 5 }
+]
+let personList: Persons = [
+  { id: 'asyud7asfd01', name: '张三', age: 60 },
+  { id: 'asyud7asfd02', name: '李四', age: 18 },
+  { id: 'asyud7asfd03', name: '王五', age: 5 }
+]
 
-defineExpose({ a, b, c })
 </script>
 
 <style scoped>
