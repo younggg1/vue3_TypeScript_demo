@@ -1,39 +1,35 @@
 <template>
   <div class="person">
-    <h2>汽车信息：一辆{{ car.brand }}车，价值{{ car.price }}万</h2>
-    <button @click="changeBrand">修改汽车的品牌</button>
-    <button @click="changePrice">修改汽车的价格</button>
-    <button @click="changeCar">修改汽车</button>
-    <hr>
-    <h2>当前求和为：{{ sum }}</h2>
-    <button @click="changeSum">点我sum+1</button>
+    <h2>姓名：{{person.name}}</h2>
+    <h2>年龄：{{person.age}}，{{nl}}</h2>
+    <button @click="changeName">修改名字</button>
+    <button @click="changeAge">修改年龄</button>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue'
+import {reactive,toRefs,toRef} from 'vue'
 
 // 数据
-let car = reactive({ brand: '奔驰', price: 100 })
-let sum = ref(0)
+let person = reactive({
+  name:'张三',
+  age:18
+})
+
+// 使用toRefs从person这个响应式对象中，解构出name、age，且name和age依然是响应式的
+// name和age的值是ref类型，其value值指向的是person.name和person.age
+let {name,age} = toRefs(person)
+let nl = toRef(person,'age')
+
+console.log(nl.value)
 
 // 方法
-function changeBrand() {
-  car.brand = '宝马'
+function changeName(){
+  name.value += '~'
+  console.log(name.value,person.name)
 }
-function changePrice() {
-  car.price += 10
-}
-function changeCar() {
-  // car = {brand:'奥拓',price:1} //这么写页面不更新的
-  // car = reactive({brand:'奥拓',price:1}) //这么写页面不更新的
-
-  // 下面这个写法页面可以更新(覆盖追加到原对象里面)
-  Object.assign(car, { brand: '奥拓', price: 1 })
-}
-function changeSum() {
-  // sum = ref(9) //这么写页面不更新的
-  sum.value += 1
+function changeAge(){
+  age.value += 1
 }
 
 </script>
@@ -45,11 +41,9 @@ function changeSum() {
   border-radius: 10px;
   padding: 20px;
 }
-
 button {
   margin: 0 5px;
 }
-
 li {
   font-size: 20px;
 }
