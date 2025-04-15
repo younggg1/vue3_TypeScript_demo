@@ -30,7 +30,7 @@ function changeName() {
 }
 function changeAge() {
   age += 1
-  console.log(age)
+  console.log(age) 
 }
 function showTel() {
   alert(tel)
