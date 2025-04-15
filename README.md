@@ -6,7 +6,7 @@
 地址：https://www.bilibili.com/video/BV1Za4y1r7KE/?p=3&share_source=copy_web&vd_source=5b8eb08d3418718b8d124c928d3039ec
 ## 目标
 - 掌握 JavaSE 的高级应用比如:
-- setup
+- setup语法糖
 - 响应式 -> ref,reactive
 - 监听 -> 函数式
 - 标签 -> scoped
@@ -21,7 +21,7 @@
 ## 进度
 - - [x] 学习 Markdown
 - - [x] 写 README
-- - [x] 语法糖setup
+- - [x] setup语法糖
 - - [ ] 持续学习中
 ## 内容
 - vue3+TypeScript示例代码
