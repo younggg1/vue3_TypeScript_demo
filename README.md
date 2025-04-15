@@ -6,7 +6,7 @@
 地址：https://www.bilibili.com/video/BV1Za4y1r7KE/?p=3&share_source=copy_web&vd_source=5b8eb08d3418718b8d124c928d3039ec
 ## 目标
 - 掌握 JavaSE 的高级应用比如:
-- 语法糖setup
+- setup
 - 响应式 -> ref,reactive
 - 监听 -> 函数式
 - 标签 -> scoped
