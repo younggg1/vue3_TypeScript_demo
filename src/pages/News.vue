@@ -10,7 +10,7 @@
         <RouterLink 
           :to="{
             name:'xiang',
-            params:{
+            query:{
               id:news.id,
               title:news.title,
               content:news.content
@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script setup lang="ts" >
+<script setup lang="ts">
   import {reactive} from 'vue'
   import {RouterView,RouterLink} from 'vue-router'
 
