@@ -28,6 +28,7 @@
 - - [x] 存数据 -> pinia
 - - [x] 组件通信
 - - [x] 只读 -> readonly
+- - [x] 弹窗 -> teleport
 - - [ ] 持续学习中
 ## 内容
 - vue3+TypeScript示例代码
