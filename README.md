@@ -25,6 +25,7 @@
 - - [x] 响应式 -> ref,reactive
 - - [x] 监听 -> 函数式
 - - [x] 标签 -> scoped
+- - [x] 存数据 -> pinia
 - - [ ] 持续学习中
 ## 内容
 - vue3+TypeScript示例代码
