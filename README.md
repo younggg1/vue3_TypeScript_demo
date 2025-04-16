@@ -5,7 +5,7 @@
 教程：【尚硅谷Vue3入门到实战，最新版vue3+TypeScript前端开发教程】  
 地址：https://www.bilibili.com/video/BV1Za4y1r7KE/?p=3&share_source=copy_web&vd_source=5b8eb08d3418718b8d124c928d3039ec
 ## 目标
-- 掌握 JavaSE 的高级应用比如:
+- 掌握 vue3+TypeScript知识比如:
 - setup语法糖
 - 响应式 -> ref,reactive
 - 监听 -> 函数式
