@@ -48,6 +48,10 @@ const router = createRouter({
       name:'guanyu',
       path:'/about',
       component:About
+    },
+    {
+      path:'/',
+      redirect:'/home',
     }
   ]
 })
