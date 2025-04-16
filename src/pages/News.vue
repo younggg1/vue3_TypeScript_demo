@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" >
   import {reactive} from 'vue'
   import {RouterView,RouterLink} from 'vue-router'
 
