@@ -2,18 +2,23 @@
   <div class="talk">
     <button @click="getLoveTalk">获取一句土味情话</button>
     <ul>
-      <li v-for="talk in talkStore.talkList" :key="talk.id">{{talk.title}}</li>
+      <li
+        v-for="talk in talkList"
+        :key="talk.id"
+      >{{ talk.title }}</li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts" >
-import {useTalkStore} from '@/store/loveTalk'
+import { useTalkStore } from '@/store/loveTalk'
+import { storeToRefs } from "pinia";
 
 const talkStore = useTalkStore()
+const { talkList } = storeToRefs(talkStore)
 
 // 方法
-function getLoveTalk(){
+function getLoveTalk() {
   talkStore.getATalk()
 }
 </script>
