@@ -6,7 +6,7 @@
   </ul>
 </template>
 
-<script setup lang="ts" >
+<script setup lang="ts" name="About">
   defineProps(['id','title','content'])
 </script>
 
