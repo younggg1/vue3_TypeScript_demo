@@ -10,30 +10,31 @@ import Detail from '@/pages/Detail.vue'
 
 // 第二步：创建路由器
 const router = createRouter({
-    history:createWebHistory(), //路由器的工作模式（稍后讲解）
-    routes:[ //一个一个的路由规则
+  history:createWebHistory(), //路由器的工作模式（稍后讲解）
+  routes:[ //一个一个的路由规则
+    {
+      name:'zhuye',
+      path:'/home',
+      component:Home
+    },
+    {
+      name:'xinwen',
+      path:'/news',
+      component:News,
+      children:[
         {
-            name:'zhuye',
-            path:'/home',
-            component:Home
-        },
-        {
-            name:'xinwen',
-            path:'/news',
-            component:News,
-            children:[
-                {
-                    path:'detail',
-                    component:Detail
-                }
-            ]
-        },
-        {
-            name:'guanyu',
-            path:'/about',
-            component:About
-        },
-    ]
+          name:'xiang',
+          path:'detail/:id/:title/:content?',
+          component:Detail
+        }
+      ]
+    },
+    {
+      name:'guanyu',
+      path:'/about',
+      component:About
+    }
+  ]
 })
 
 // 暴露出去router
