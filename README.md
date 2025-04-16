@@ -26,6 +26,8 @@
 - - [x] 监听 -> 函数式
 - - [x] 标签 -> scoped
 - - [x] 存数据 -> pinia
+- - [x] 组件通信
+- - [x] 只读 -> readonly
 - - [ ] 持续学习中
 ## 内容
 - vue3+TypeScript示例代码
